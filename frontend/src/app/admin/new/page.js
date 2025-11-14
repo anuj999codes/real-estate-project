@@ -206,6 +206,7 @@ export default function NewPropertyPage() {
                   onChange={(e) => setVal("main_image", e.target.value)}
                 />
                 <CloudinaryUpload
+                  folder="properties"
                   onUploaded={(url) => setVal("main_image", url)}
                 />
                 {form.main_image && (

@@ -64,7 +64,7 @@ export default function HomePage() {
         }}
       >
         {items.map((p) => (
-          <PropertyCard key={p.id} property={p} onDelete={onDelete} />
+          <PropertyCard key={p.id} property={p} onDelete={onDelete} showAdmin={false}/>
         ))}
       </div>
       {!loading && items.length === 0 && (
