@@ -36,12 +36,20 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.options("/*", cors(corsOptions));
+app.options("/.*/", cors(corsOptions));
 
 app.use(express.json());
 
 app.use("/properties", propertiesRouter);
 app.use("/uploads", uploads);
+
+app.use((req, res, next) => {
+  if (req.method === "OPTIONS") {
+    return cors(corsOptions)(req, res, next);
+  }
+  next();
+});
+
 
 app.use((err, req, res, next) => {
   console.error(err);
