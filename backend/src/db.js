@@ -6,7 +6,7 @@ const pool = new Pool({
   ssl: { rejectUnauthorized: false }
 });
 
-// Test connection on startup so Render logs show the real error
+// Test connection on startup so Render logs show the real errorp
 (async function testConnection() {
   try {
     const client = await pool.connect();
